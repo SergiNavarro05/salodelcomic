@@ -108,9 +108,17 @@ ul
 
 a
 {
-	font-size: 3rem;
+	font-size: 3.5rem;
 	color: white;
-	text-decoration: none;
+	text-decoration: none;    
+	transition: transform 0.3s ease; 
+
+}
+
+a:hover
+{
+	color: rgba(22, 178, 252, 0.90);
+	transform: scale(1.1);
 }
 
 
@@ -127,8 +135,20 @@ a
 
 
 
-
 /*ENTRADES*/
+
+
+@keyframes moveIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 
 #seccion1 
 {
@@ -147,7 +167,17 @@ a
 	padding-top: 2%;
 }
 
-#seccion1 img
+#seccion1 img {
+    width: 70%;
+    height: auto;
+    border-radius: 200px;
+    padding: 2%;
+    display: block;
+    margin: 0 auto;
+    animation: moveIn 4s ease forwards;
+}
+
+#ticket
 {
 	width: 70%;
 	height: auto;
@@ -185,9 +215,17 @@ a
 	color: rgba(0, 1, 96, 0.93);
 }
 
+.Col1 a
+{
+	font-size: 3rem;
+	text-align: center;
+	padding: 8%;
+	color: white;
+}
+
 .Col1 button
 {
-	width: 60%;
+	width: 70%;
 	height: 25%;
 	display: block;
 	margin: 0 auto;
@@ -197,6 +235,14 @@ a
 	color: white;
 	font-weight: bold;
 	padding: 20px;
+	transition: transform 0.3s ease;
+	border: none;
+	margin-top: 20px;
+}
+
+.Col1 button:hover
+{
+	transform: scale(1.05); 
 }
 
 
@@ -205,8 +251,24 @@ a
 
 
 
+#video-container {
+    position: relative;
+    width: 100%;
+    height: 950px; 
+    overflow: hidden;
+}
 
-
+#video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+}
 
 
 
@@ -332,7 +394,6 @@ a
 	width: calc(33% - 20px);
 	height: auto;
 	margin: 10px;
-	/*background-color: red;*/
 	position: relative;
 }
 
@@ -340,6 +401,14 @@ a
 {
 	width: 100%;
 	height: auto;
+	border-radius: 30px;
+		transition: transform 0.3s ease; 
+
+}
+
+.Col2 img:hover
+{
+	transform: scale(0.97); 
 }
 
 .cajatext1
@@ -451,12 +520,27 @@ a
 {
 	width: 100%;
 	height: auto;
+	transition: transform 0.3s ease; 
+	z-index: 0;
+
+}
+
+#seccion4 img:hover
+{
+	transform: scale(1.1); 
 }
 
 .galeria 
 {
-    position: relative; 
-}
+    position: relative;
+    flex: 1 1 25%;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    margin-bottom: -10px; 
+} 
+
 
 .galeria h1 
 {
@@ -468,6 +552,7 @@ a
     font-size: 7rem;
     color: white;
     transition: color 0.3s ease;
+     z-index: 1;
 }
 
 
@@ -490,7 +575,8 @@ a
 
 #botonInicioIndex:hover 
 {
-    background-color: rgba(0, 1, 96, 0.93); 
+    background-color: rgba(0, 1, 96, 0.93);
+    transform: scale(0.95);  
 }
 
 #you 
@@ -589,7 +675,7 @@ footer
     height: auto;
     margin: 20px;
     padding-top: 5%;
-/*    background-color: red;*/
+    animation: slideInLeft 1s forwards;
 }
 
 #cajaCont1 p
@@ -602,12 +688,6 @@ footer
     padding-top: 5%;
 }
 
-#cajaCont1 img
-{
-	width: 100%;
-	height: auto;
-	border-radius: 100px;
-}
 
 #cajafinal5
 {
@@ -640,11 +720,92 @@ footer
 #botonInicio:hover 
 {
     background-color: #f0f0f0; 
+    transform: scale(0.95); 
+}
+
+@keyframes slideInLeft 
+{
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight 
+{
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 
 
+#cajaCont1 p 
+{
+    font-size: 2rem; 
+    text-align: center;
+    margin-bottom: 30px; 
+}
 
+#cajaCont1 
+{
+    width: 70%; 
+    margin: auto; 
+    padding: 30px; 
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; 
+}
+
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea.form-control {
+    height: 150px;
+}
+
+.btn-primary {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(22, 178, 252, 0.90);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
 
 
 
@@ -814,6 +975,347 @@ footer
 
 
 
+
+
+@media screen and (max-width: 978px)
+
+
+
+
+{
+
+
+ #video-container 
+{
+    height: 500px;
+}
+
+    #video-container video 
+{
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+}
+
+
+
+#header 
+{
+	display: flex;
+  	justify-content: center;
+ 	align-items: center;
+}
+
+#header img 
+{
+ 	width: 50%; 
+}
+
+#hero 
+{
+ 	display: flex;
+	flex-direction: column;
+ 	align-items: center;
+}
+
+#titol 
+{
+	text-align: center;
+	margin-top: 20px; 
+}
+
+#titol h1 
+{
+	font-size: 5rem;
+}
+
+#titol p 
+{
+	font-size: 4rem; 
+}
+
+ul
+{
+	text-align: center;
+}
+
+nav 
+{
+	top: 70%;
+	left: 30%;
+}
+
+a 
+{
+	font-size: 2.5rem;
+	align-items: center;
+}
+
+
+
+
+
+
+
+/*COMPRA DE ENTRADES*/
+
+
+#seccion1 h2
+{
+	font-size: 4rem;
+	margin: 20px;
+	padding-bottom: 3%;
+}
+
+#columnas 
+{
+	flex-direction: column;
+	width: 	100%;
+}
+
+.Col1 
+{
+	width: 	100%;
+}
+
+.Col1 p
+{
+	font-size: 2.7rem;
+}
+
+#seccion1 img
+{
+	width: 40%;
+	height: auto;
+	border-radius: 200px;
+	padding: 2%;
+	display: block;
+	margin: 0 auto;
+}
+
+.Col1 button
+{
+	width: 52%;
+	height: 25%;
+	display: block;
+	margin: 0 auto;
+	font-size: 3rem;
+	border-radius: 50px;
+	background-color: rgba(22, 178, 252, 0.90);
+	color: white;
+	font-weight: bold;
+	padding: 20px;
+}
+
+#seccion1 img
+{
+	width: 65%;
+
+}
+
+
+
+
+/*LOCALITZACIÓ*/
+
+#seccion2 h2
+{
+	font-size: 4rem;
+}
+
+
+#caja1 p
+{
+	font-size: 1.5rem;
+}
+
+
+
+
+
+/*CARTELL2024*/
+
+
+#seccion3 h2
+{
+	font-size: 4rem;
+}
+
+#caja3
+{
+	padding-top: 13%;
+}
+
+
+#cajatextcartell
+{
+	width: 90%;
+}
+
+#seccion3 h3
+{
+	font-size: 2.5rem;
+}
+
+
+.cajatext1 p
+{
+	left: 6%;
+	top: 10%;
+	font-size: 1.2rem;
+}
+
+.cajatext2 p
+{
+	left: 13%;
+	top: 9%;
+	font-size: 1.2rem;
+}
+
+.cajatext3 p
+{
+	left: 17%;
+	top: 9%;
+	font-size: 1.2rem;
+}
+
+.cajatext1
+{
+	width: 92%;
+	height: 10%;
+	bottom: 8%;
+	left: 15%;
+}
+
+.cajatext1
+{
+	width: 80%;
+	border: 1px solid white;
+	left: 11%;
+}
+
+.cajatext2
+{
+	width: 45%;
+	height: 10%;
+	position: absolute;
+	background-color: rgba(0, 1, 96, 0.93);
+	border: 1px solid white;
+	border-radius: 100px;
+	bottom: 8%;
+	left: 27%;
+}
+
+.cajatext3
+{
+	width: 45%;
+	height: 10%;
+	position: absolute;
+	background-color: rgba(0, 1, 96, 0.93);
+	border: 1px solid white;
+	border-radius: 100px;
+	bottom: 8%;
+	left: 27%;
+}
+
+
+/*GALERIA*/
+
+
+.galeria h1 
+{
+    font-size: 4rem;
+}
+
+#botonInicioIndex 
+{
+    font-size: 2rem;
+}
+
+
+
+
+/*Compra d'entrades*/
+
+#seccionentrades h2
+{
+	font-size: 3rem;
+	padding-bottom: 5%;
+}
+
+#seccionentrades h3
+{
+	font-size: 2rem;
+}
+
+.ColENT a {
+    font-size: 1rem; 
+}
+
+.ColENT p {
+    font-size: 2rem; 
+}
+
+.ColENT h3 {
+    font-size: 2rem; 
+}
+
+#botonCompra 
+{
+    font-size: 2rem;
+}
+
+#botonCompra2 
+{
+    font-size: 2rem;
+}
+
+#botonInicio 
+{
+    font-size: 2rem;
+}
+
+
+
+/*Contacte*/
+
+
+#cajaCont1 p
+{
+	padding-top: 5%;
+	text-align: center;
+	font-size: 2rem;
+    color: rgba(22, 178, 252, 0.90);
+    text-align: center;
+    padding-top: 5%;
+}
+
+#seccionCont
+{
+	flex-direction: column;
+}
+
+#cajaCont1
+{
+	width: 80%;
+	padding-left: 15%;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 568px)
 
 
@@ -822,6 +1324,18 @@ footer
 {
 
 
+ #video-container 
+{
+    height: 240px;
+}
+
+    #video-container video 
+{
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+}
 
 
 #header 
@@ -908,6 +1422,10 @@ a
 	font-size: 2rem;
 }
 
+.Col1 a
+{
+	font-size: 2rem;
+}
 
 
 
@@ -986,18 +1504,21 @@ a
 {
 	left: 6%;
 	top: 10%;
+	font-size: 2rem;
 }
 
 .cajatext2 p
 {
 	left: 13%;
 	top: 9%;
+	font-size: 2rem;
 }
 
 .cajatext3 p
 {
 	left: 17%;
 	top: 9%;
+	font-size: 2rem;
 }
 
 .cajatext1

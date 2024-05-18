@@ -22,6 +22,7 @@
 	<img src="media/logo.png" alt="logo">
 </div>
 
+
 <div id="seccionCont">
 	<div id="cajaCont1">
 		<p>
@@ -33,12 +34,39 @@
 		comercial@ficomic.com
 		</p>
 	</div>
+	
 	<div id="cajaCont1">
-		<img src="media/fotocontacte.jpg" alt="fotocontacte">
+		<div class="container mt-5">
+        <h2 class="text-center mb-4">Contacta'ns!</h2>
+        <form>
+            <div class="form-group">
+                <label for="nombre">Nom:</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correu Electrònic:</label>
+                <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico" required>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Missatge:</label>
+                <textarea class="form-control" id="mensaje" rows="5" placeholder="Escriba su mensaje aquí" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+        </form>
+    </div>
+
+     <!-- Agregar Bootstrap JS y jQuery (opcional, pero necesario para algunas funciones de Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 	</div>
 
+
+
 	<div id="cajafinal5">
-		<a href="index.html" id="botonInicio" target="_blank">INICI</a>
+		<a href="index.html" id="botonInicio">INICI</a>
 			<img src="media/fotofinal.png" alt="fotofinal">
 	</div>
 </div>
+
